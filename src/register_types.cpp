@@ -4,6 +4,9 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
+#include "audio_stream_mytone.h"
+#include "audio_stream_player_mytone.h"
+
 using namespace godot;
 
 void initialize_gdextension_types(ModuleInitializationLevel p_level)
@@ -11,7 +14,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-	//ClassDB::register_class<YourClass>();
+	ClassDB::register_class<AudioStreamMyTone>();
+	ClassDB::register_class<AudioStreamPlaybackMyTone>();
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

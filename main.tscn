@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7vsrs5uss2ke"]
+
+[sub_resource type="AudioStreamMyTone" id="AudioStreamMyTone_ds073"]
+
+[node name="main" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMyTone_ds073")
+autoplay = true
