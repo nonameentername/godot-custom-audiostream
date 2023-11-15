@@ -69,7 +69,7 @@ library = env.SharedLibrary(
 def copy_bin_to_projectdir(target, source, env):
     import shutil
 
-    targetfrom = "./bin/{}/lib{}".format(env["platform"], file)
+    targetfrom = "bin/{}/lib{}".format(env["platform"], file)
     targetdest = "{}/bin/{}/lib{}".format(projectdir, env["platform"], file)
     shutil.copyfile(targetfrom, targetdest)
 
