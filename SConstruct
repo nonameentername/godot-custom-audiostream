@@ -74,9 +74,9 @@ def copy_bin_to_projectdir(target, source, env):
     shutil.copyfile(targetfrom, targetdest)
 
 
-copy = env.Command(libraryfile, None, copy_bin_to_projectdir)
+#copy = env.Command(libraryfile, None, copy_bin_to_projectdir)
 
-default_args = [library, copy]
+default_args = [library]
 if localEnv.get("compiledb", False):
     default_args += [compilation_db]
 Default(*default_args)

@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7vsrs5uss2ke"]
+[gd_scene load_steps=3 format=3 uid="uid://b7vsrs5uss2ke"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_87wx3"]
 
 [sub_resource type="AudioStreamMyTone" id="AudioStreamMyTone_ds073"]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("1_87wx3")
+audio_stream = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMyTone_ds073")
-autoplay = true
+
+[node name="HSlider" type="HSlider" parent="AudioStreamPlayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -62.0
+offset_right = 155.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+min_value = 10.0
+max_value = 20000.0
+value = 639.0
+
+[node name="Button" type="CheckButton" parent="AudioStreamPlayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -24.5
+offset_right = 156.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[connection signal="value_changed" from="AudioStreamPlayer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="AudioStreamPlayer/Button" to="." method="_on_button_toggled"]

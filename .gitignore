@@ -48,3 +48,7 @@ compile_commands.json
 # VSCode
 .vscode/*
 !.vscode/extensions.json
+
+#ignore build dir
+build
+bin
