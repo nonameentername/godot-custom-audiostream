@@ -12,3 +12,7 @@ Linux:
 Web:
 
     scons platform=web target=template_debug debug_symbols=yes
+
+Web using docker:
+
+    make
